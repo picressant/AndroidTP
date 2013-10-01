@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class Hello extends Activity {
 
@@ -23,8 +24,12 @@ public class Hello extends Activity {
 	public void toastClick(View v) {
 		//Toast.makeText(this, "Toaaaioyauste", Toast.LENGTH_SHORT).show();
 		
+		EditText t = (EditText) findViewById(R.id.input);
+		Main.text = t.getText().toString();
+		
 		Intent intent = new Intent(this, Main.class);
 		startActivity(intent);
+		
 	}
 
 	public void poitiersClick(View v) {
