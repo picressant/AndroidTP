@@ -1,10 +1,13 @@
 package fr.gphy.piotrgui.androidtp;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.Button;
 
 public class Hello extends Activity {
 
@@ -12,6 +15,21 @@ public class Hello extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_hello);
+
+		Button v = (Button) findViewById(R.id.button1);
+		v.setBackgroundColor(Color.RED);
+	}
+	
+	public void toastClick(View v) {
+		//Toast.makeText(this, "Toaaaioyauste", Toast.LENGTH_SHORT).show();
+		
+		Intent intent = new Intent(this, Main.class);
+		startActivity(intent);
+	}
+
+	public void poitiersClick(View v) {
+		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.univ-poitiers.fr"));
+		startActivity(browserIntent);
 	}
 
 	@Override
@@ -21,5 +39,4 @@ public class Hello extends Activity {
 		return true;
 	}
 	
-
 }

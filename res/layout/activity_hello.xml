@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#00FF99"
     android:orientation="vertical"
-    tools:context=".Main" >
+    tools:context=".Hello" >
 
     <Button
         android:id="@+id/button1"
@@ -46,5 +46,13 @@
         android:text="@string/hello_world"
         android:textColor="#FF69B4" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:onClick="poitiersClick"
+        android:text="Univ-Poitiers" />
 
 </RelativeLayout>

@@ -34,4 +34,14 @@
         android:layout_alignLeft="@+id/gridView1"
         android:text="&lt;" />
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:onClick="retourClick"
+        android:text="Retour" />
+
 </RelativeLayout>
