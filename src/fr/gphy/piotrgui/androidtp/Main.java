@@ -6,22 +6,26 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Main extends Activity {
 
-	public static String text;
+	public static final String DISPLAY_TEXT_KEY = "text1";
+	private Intent intent;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
+		intent = new Intent(this, Hello.class);
+
 		TextView v = (TextView)findViewById(R.id.output);
-		v.setText(text);
+		v.setText(getIntent().getStringExtra(DISPLAY_TEXT_KEY));
+		Toast.makeText(this, getIntent().getStringExtra(DISPLAY_TEXT_KEY), Toast.LENGTH_SHORT).show();
 	}
 	
 	public void retourClick(View v) {
-		Intent intent = new Intent(this, Hello.class);
 		startActivity(intent);
 	}
 

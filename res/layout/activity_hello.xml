@@ -6,14 +6,6 @@
     android:orientation="vertical"
     tools:context=".Hello" >
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:onClick="toastClick"
-        android:text="Submit" />
-
     <TextView
         android:id="@+id/output"
         android:layout_width="wrap_content"
@@ -24,6 +16,7 @@
         android:textColor="#FF69B4" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -40,6 +33,7 @@
         android:textColor="#FF69B4" />
 
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -51,20 +45,32 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:onClick="poitiersClick"
-        android:text="Univ-Poitiers" />
+        android:text="@string/univ_poitiers" />
 
     <EditText
         android:id="@+id/input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" >
+        android:layout_centerVertical="true"
+        android:inputType="text"
+        android:layout_toLeftOf="@+id/button1" 
+        android:hint="@string/entrez_votre_text">
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/input"
+        android:layout_alignBottom="@+id/input"
+        android:layout_alignParentRight="true"
+        android:onClick="submit"
+        android:text="@string/submit" />
 
 </RelativeLayout>

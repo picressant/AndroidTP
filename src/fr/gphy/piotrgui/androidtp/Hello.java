@@ -12,6 +12,8 @@ import android.widget.EditText;
 
 public class Hello extends Activity {
 
+	private Intent intent;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -19,22 +21,22 @@ public class Hello extends Activity {
 
 		Button v = (Button) findViewById(R.id.button1);
 		v.setBackgroundColor(Color.RED);
+		intent  = new Intent(this, Main.class);
 	}
 	
-	public void toastClick(View v) {
-		//Toast.makeText(this, "Toaaaioyauste", Toast.LENGTH_SHORT).show();
-		
+	public void submit(View v) {
 		EditText t = (EditText) findViewById(R.id.input);
-		Main.text = t.getText().toString();
-		
-		Intent intent = new Intent(this, Main.class);
+		intent.putExtra(Main.DISPLAY_TEXT_KEY, t.getText().toString());
 		startActivity(intent);
-		
 	}
 
 	public void poitiersClick(View v) {
-		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.univ-poitiers.fr"));
-		startActivity(browserIntent);
+		startActivity(
+			new Intent(
+				Intent.ACTION_VIEW, 
+				Uri.parse("http://www.univ-poitiers.fr")	
+			)
+		);
 	}
 
 	@Override
